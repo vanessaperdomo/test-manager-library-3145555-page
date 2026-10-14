@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manager Library — Sistema de Préstamos y Biblioteca | SENA ADSO 3145555</title>
+  <meta name="description" content="Presentación de la solución técnica para Manager Library bajo Spec-Driven Development (SDD) con stack React y Laravel.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <div class="container nav-wrap">
+      <a href="#" class="brand">
+        <div class="brand-icon">📖</div>
+        <div>Manager <span style="color: var(--accent-primary);">Library</span></div>
+      </a>
+      <nav>
+        <a href="#repos">Ecosistema</a>
+        <a href="#architecture">Arquitectura SDD</a>
+        <a href="#acceptance">Criterios de Aceptación</a>
+        <a href="#debt">Deuda Técnica</a>
+        <a href="#gitflow">GitFlow</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main>
+    <section class="hero container">
+      <div class="badge-pill">
+        <span>🚀</span> SENA ADSO &bull; Ficha 3145555 &bull; Prueba Técnica SDD
+      </div>
+      <h1>Gestión Bibliotecaria Guiada por Especificación</h1>
+      <p>
+        Implementación integral del reto <strong>Manager Library</strong> traduciendo la especificación formal a una arquitectura de alto rendimiento basada en <strong>React 18</strong>, <strong>PHP Laravel 11</strong>, <strong>PostgreSQL 16</strong> y <strong>Docker</strong>.
+      </p>
+      <div class="btn-group">
+        <a href="https://github.com/vanessaperdomo/test-manager-library-3145555-docs" target="_blank" class="btn btn-primary">
+          📄 Ver Documentación SDD
+        </a>
+        <a href="#architecture" class="btn btn-secondary">
+          🔍 Explorar Solución
+        </a>
+      </div>
+
+      <!-- Quick Stats -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number">6 / 6</div>
+          <div class="stat-label">Repositorios Desplegados</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">10</div>
+          <div class="stat-label">Criterios Aprobados (CA-01 a CA-10)</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Contrato de API Cumplido</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">3</div>
+          <div class="stat-label">Ambientes (dev &bull; qa &bull; main)</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6 Repositories Ecosystem -->
+    <section id="repos" class="container">
+      <div class="section-title">
+        <h2>Ecosistema de Repositorios</h2>
+        <p>Estructura multi-repositorio que asegura la separación estricta de responsabilidades entre infraestructura, servicios y cliente.</p>
+      </div>
+
+      <div class="cards-grid">
+        <!-- Docs -->
+        <div class="card">
+          <div class="card-icon">📑</div>
+          <span class="card-tag">SDD &bull; Especificación</span>
+          <h3 style="margin-top: 12px;">test-manager-library-3145555-docs</h3>
+          <p>Traducción de especificaciones originales a Laravel + React, registro de ADRs y formalización de 6 ítems de deuda técnica.</p>
+        </div>
+
+        <!-- Infra -->
+        <div class="card">
+          <div class="card-icon">🐳</div>
+          <span class="card-tag">Docker &bull; PostgreSQL 16</span>
+          <h3 style="margin-top: 12px;">test-manager-library-3145555-infra</h3>
+          <p>Contenedor de PostgreSQL 16 Alpine, red interna aislada, extensiones UUID/pgcrypto e inicialización del esquema `library`.</p>
+        </div>
+
+        <!-- API -->
+        <div class="card">
+          <div class="card-icon">⚡</div>
+          <span class="card-tag">PHP 8.2 &bull; Laravel 11</span>
+          <h3 style="margin-top: 12px;">test-manager-library-3145555-api</h3>
+          <p>API RESTful con autenticación JWT HMAC-SHA256, RBAC estricto, soft-deletes en libros y transacciones ACID en préstamos.</p>
+        </div>
+
+        <!-- App -->
+        <div class="card">
+          <div class="card-icon">💻</div>
+          <span class="card-tag">React 18 &bull; Vite &bull; SPA</span>
+          <h3 style="margin-top: 12px;">test-manager-library-3145555-app</h3>
+          <p>Cliente SPA responsivo con diseño Glassmorphism, catálogo con portadas, préstamos transaccionales y reporte estadístico.</p>
+        </div>
+
+        <!-- Page -->
+        <div class="card">
+          <div class="card-icon">🌐</div>
+          <span class="card-tag">Sitio Público</span>
+          <h3 style="margin-top: 12px;">test-manager-library-3145555-page</h3>
+          <p>Portal web estático de presentación de la prueba técnica, arquitectura y estado de avance de la solución.</p>
+        </div>
+
+        <!-- Tool -->
+        <div class="card">
+          <div class="card-icon">🛠️</div>
+          <span class="card-tag">CLI &bull; Automatización</span>
+          <h3 style="margin-top: 12px;">test-manager-library-3145555-tool</h3>
+          <p>Herramienta para sembrado automático de datos sintéticos realistas (libros, socios, préstamos activos y moras).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Architecture & SDD Core Highlights -->
+    <section id="architecture" class="container" style="background: rgba(255,255,255,0.01); border-radius: var(--radius-lg); padding: 48px 32px;">
+      <div class="section-title">
+        <h2>Puntales de la Arquitectura SDD</h2>
+        <p>Decisiones de ingeniería orientadas a la robustez, trazabilidad y cumplimiento exacto del modelo.</p>
+      </div>
+
+      <div class="cards-grid">
+        <div class="card">
+          <h3>🔐 Autenticación y RBAC (ADR-002)</h3>
+          <p>Tokens JWT portadores emitidos por la API con duración forzada de 8 horas. Roles diferenciados: Administrador (gestión global) y Bibliotecario (operación diaria).</p>
+        </div>
+        <div class="card">
+          <h3>📦 Préstamos Atómicos y Cupo (CA-06)</h3>
+          <p>Transacciones ACID con bloqueos a nivel de fila (`FOR UPDATE`). Validación de cupo máximo de 3 libros por socio y bloqueo automático por libros vencidos.</p>
+        </div>
+        <div class="card">
+          <h3>⏱️ Estado Calculado al Vuelo (CA-08)</h3>
+          <p>El estado del préstamo (`active`, `closed`, `overdue`) no es una columna fija: se computa dinámicamente según la fecha actual UTC, previniendo datos desfasados.</p>
+        </div>
+        <div class="card">
+          <h3>📊 Reporte Agregado y Privacidad (ADR-004)</h3>
+          <p>El reporte de libros más prestados utiliza los datos congelados del ítem (`loan_item`), protegiendo la identidad de los lectores y respetando la privacidad.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Acceptance Criteria Compliance -->
+    <section id="acceptance" class="container">
+      <div class="section-title">
+        <h2>Matriz de Criterios de Aceptación (CA-01 a CA-10)</h2>
+        <p>Resumen de verificación de los 10 criterios formales especificados en el requerimiento.</p>
+      </div>
+
+      <div class="card" style="padding: 0; overflow-x: auto;">
+        <table class="custom-table">
+          <thead>
+            <tr>
+              <th>Criterio</th>
+              <th>Descripción del Negocio</th>
+              <th>Implementación en Stack</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>CA-01</strong></td>
+              <td>Autenticación y emisión de tokens</td>
+              <td>POST /auth/login con verificación Bcrypt y JWT HMAC-SHA256</td>
+              <td><span style="color: var(--accent-emerald); font-weight: 700;">✓ Verificado</span></td>
+            </tr>
+            <tr>
+              <td><strong>CA-02</strong></td>
+              <td>Alta de usuarios (Solo rol librarian)</td>
+              <td>POST /users restringido a Admin; rechaza rol admin con 422</td>
+              <td><span style="color: var(--accent-emerald); font-weight: 700;">✓ Verificado</span></td>
+            </tr>
+            <tr>
+              <td><strong>CA-03</strong></td>
+              <td>Categorías fijas en inglés</td>
+              <td>5 categorías sembradas: Novel, Science, Technology, History, Children</td>
+              <td><span style="color: var(--accent-emerald); font-weight: 700;">✓ Verificado</span></td>
+            </tr>
+            <tr>
+              <td><strong>CA-04</strong></td>
+              <td>Catálogo de libros y soft-delete</td>
+              <td>ISBN único, stock no negativo, soft-delete con borrado de portada</td>
+              <td><span style="color: var(--accent-emerald); font-weight: 700;">✓ Verificado</span></td>
+            </tr>
+            <tr>
+              <td><strong>CA-05</strong></td>
+              <td>Directorio de socios</td>
+              <td>Documento único (409 en duplicados) y conteo de préstamos activos</td>
+              <td><span style="color: var(--accent-emerald); font-weight: 700;">✓ Verificado</span></td>
+            </tr>
+            <tr>
+              <td><strong>CA-06</strong></td>
+              <td>Préstamo transaccional</td>
+              <td>1 a 3 libros, validación de stock, bloqueo si tiene moras</td>
+              <td><span style="color: var(--accent-emerald); font-weight: 700;">✓ Verificado</span></td>
+            </tr>
+            <tr>
+              <td><strong>CA-07</strong></td>
+              <td>Devolución por línea</td>
+              <td>POST /loans/.../return incrementa stock y sella fecha de entrega</td>
+              <td><span style="color: var(--accent-emerald); font-weight: 700;">✓ Verificado</span></td>
+            </tr>
+            <tr>
+              <td><strong>CA-08</strong></td>
+              <td>Cálculo dinámico de estado</td>
+              <td>Evaluación en tiempo real: active, closed o overdue</td>
+              <td><span style="color: var(--accent-emerald); font-weight: 700;">✓ Verificado</span></td>
+            </tr>
+            <tr>
+              <td><strong>CA-09</strong></td>
+              <td>Consulta de préstamos vencidos</td>
+              <td>GET /loans/overdue ordenado por días de atraso descendente</td>
+              <td><span style="color: var(--accent-emerald); font-weight: 700;">✓ Verificado</span></td>
+            </tr>
+            <tr>
+              <td><strong>CA-10</strong></td>
+              <td>Reporte de libros más prestados</td>
+              <td>Agregación por libro en rango de fechas con validación 422</td>
+              <td><span style="color: var(--accent-emerald); font-weight: 700;">✓ Verificado</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Technical Debt Documented -->
+    <section id="debt" class="container">
+      <div class="section-title">
+        <h2>Gestión de Deuda Técnica</h2>
+        <p>Discrepancias identificadas entre la especificación y la arquitectura moderna, formalmente registradas en technical-debt.md.</p>
+      </div>
+
+      <div class="cards-grid">
+        <div class="card">
+          <span class="card-tag">DEBT-001 &bull; Nombres de Tablas</span>
+          <h3 style="margin-top: 10px;">Singular vs Plural</h3>
+          <p>Se mantuvo el nombre singular (`book`, `member`, `loan`) exigido por el esquema base en lugar de las convenciones plurales de Laravel.</p>
+        </div>
+
+        <div class="card">
+          <span class="card-tag">DEBT-002 &bull; Semillas en Inglés</span>
+          <h3 style="margin-top: 10px;">Traducción de Categorías</h3>
+          <p>Para consistencia internacional, las categorías se sembraron en inglés (Novel, Science, Technology, History, Children).</p>
+        </div>
+
+        <div class="card">
+          <span class="card-tag">DEBT-003 &bull; Fechas UTC</span>
+          <h3 style="margin-top: 10px;">Zona Horaria Canónica</h3>
+          <p>Manejo de fechas en UTC en base de datos y serialización en formato ISO-8601 hacia el frontend React.</p>
+        </div>
+
+        <div class="card">
+          <span class="card-tag">DEBT-004 &bull; JWT Stateless</span>
+          <h3 style="margin-top: 10px;">Falta de Blacklist de Tokens</h3>
+          <p>Al no existir tabla de sesiones en el spec, el logout es gestionado en el cliente descartando el token del almacenamiento local.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- GitFlow Model -->
+    <section id="gitflow" class="container" style="text-align: center;">
+      <div class="section-title">
+        <h2>Estrategia GitFlow: 3 Ambientes</h2>
+        <p>Todos los repositorios del proyecto implementan la jerarquía de ramas requerida por la evaluación.</p>
+      </div>
+
+      <div class="card" style="max-width: 800px; margin: 0 auto; padding: 32px;">
+        <div style="display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 20px;">
+          <div>
+            <div style="font-size: 2rem;">🌿</div>
+            <div style="font-weight: 800; color: #818cf8; margin-top: 8px;">feature/*</div>
+            <div style="font-size: 0.8rem; color: var(--text-muted);">Desarrollo atómico</div>
+          </div>
+          <div style="font-size: 1.5rem; color: var(--text-muted);">➔</div>
+          <div>
+            <div style="font-size: 2rem;">⚙️</div>
+            <div style="font-weight: 800; color: var(--accent-emerald); margin-top: 8px;">dev</div>
+            <div style="font-size: 0.8rem; color: var(--text-muted);">Integración continua</div>
+          </div>
+          <div style="font-size: 1.5rem; color: var(--text-muted);">➔</div>
+          <div>
+            <div style="font-size: 2rem;">🧪</div>
+            <div style="font-weight: 800; color: var(--accent-amber); margin-top: 8px;">qa</div>
+            <div style="font-size: 0.8rem; color: var(--text-muted);">Control de calidad</div>
+          </div>
+          <div style="font-size: 1.5rem; color: var(--text-muted);">➔</div>
+          <div>
+            <div style="font-size: 2rem;">🚀</div>
+            <div style="font-weight: 800; color: #fff; margin-top: 8px;">main</div>
+            <div style="font-size: 0.8rem; color: var(--text-muted);">Producción final</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p style="font-weight: 700; color: #fff; margin-bottom: 8px;">
+        SENA &bull; Centro de Teleinformática y Producción Industrial &bull; Regional Cauca
+      </p>
+      <p>
+        Análisis y Desarrollo de Software (ADSO) &bull; Ficha 3145555 &bull; Prueba Técnica 14 de Octubre de 2026
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
