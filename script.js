@@ -38,3 +38,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
   counters.forEach(animateCounter);
 });
+
+
+// Real-time API Health Checker
+async function checkApiHealth() {
+  const badge = document.getElementById('api-health-badge');
+  if (!badge) return;
+  try {
+    const res = await fetch('http://127.0.0.1:8000/api/v1/health');
+    if (res.ok) {
+      badge.textContent = '● API Online';
+      badge.className = 'status-badge online';
+    } else {
+      badge.textContent = '● API Degraded';
+      badge.className = 'status-badge warning';
+    }
+  } catch (e) {
+    badge.textContent = '● API Offline';
+    badge.className = 'status-badge offline';
+  }
+}
+window.addEventListener('DOMContentLoaded', checkApiHealth);
